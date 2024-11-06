@@ -1,0 +1,22 @@
+services:
+  back-let:
+    build: /backend
+    ports:
+      - 8800:8800
+    expose:
+      - 8800
+    networks:
+      - let-network
+
+  front-let:
+    build: /frontend
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    networks:
+      - let-network      
+
+networks:
+  let-network:
+    driver: bridge
